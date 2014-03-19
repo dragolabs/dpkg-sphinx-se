@@ -61,7 +61,7 @@ mkdir -p ${INSTALL_DIR}/usr/lib/mysql/plugin/
 cp ${BUILD_DIR}/percona-server-${PERCONA_VER}/storage/sphinx/ha_sphinx.so ${INSTALL_DIR}/usr/lib/mysql/plugin/
 chmod 644 ${INSTALL_DIR}/usr/lib/mysql/plugin/ha_sphinx.so
 
-## create deb package with fpm
+# create deb package with fpm
 cd ${WORK_DIR}
 fpm -s dir -t deb -C ${INSTALL_DIR}/ \
     -n sphinx-se -v ${SPHINX_VER} \

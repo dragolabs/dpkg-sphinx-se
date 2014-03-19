@@ -1,0 +1,13 @@
+# Logfile created on 2014-03-19 15:52:30 +0400 by logger.rb/44203
+I, [2014-03-19T15:52:30.588596 #42694]  INFO -- : 0:  addressable (2.3.5) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/addressable-2.3.5.gemspec
+I, [2014-03-19T15:52:30.590145 #42694]  INFO -- : 0:  cabin (0.6.1) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/cabin-0.6.1.gemspec
+I, [2014-03-19T15:52:30.590422 #42694]  INFO -- : 0:  arr-pm (0.0.9) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/arr-pm-0.0.9.gemspec
+I, [2014-03-19T15:52:30.590702 #42694]  INFO -- : 0:  backports (3.6.0) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/backports-3.6.0.gemspec
+I, [2014-03-19T15:52:30.590989 #42694]  INFO -- : 0:  ffi (1.9.3) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/ffi-1.9.3.gemspec
+I, [2014-03-19T15:52:30.591279 #42694]  INFO -- : 0:  childprocess (0.5.1) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/childprocess-0.5.1.gemspec
+I, [2014-03-19T15:52:30.591533 #42694]  INFO -- : 0:  clamp (0.6.3) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/clamp-0.6.3.gemspec
+I, [2014-03-19T15:52:30.591775 #42694]  INFO -- : 0:  http_parser.rb (0.5.3) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/http_parser.rb-0.5.3.gemspec
+I, [2014-03-19T15:52:30.591989 #42694]  INFO -- : 0:  ftw (0.0.39) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/ftw-0.0.39.gemspec
+I, [2014-03-19T15:52:30.592204 #42694]  INFO -- : 0:  json (1.8.1) from /Users/ddr/.rvm/rubies/ruby-2.1.0/lib/ruby/gems/2.1.0/specifications/default/json-1.8.1.gemspec
+I, [2014-03-19T15:52:30.592408 #42694]  INFO -- : 0:  fpm (1.0.2) from /Users/ddr/.rvm/gems/ruby-2.1.0/specifications/fpm-1.0.2.gemspec
+I, [2014-03-19T15:52:30.592616 #42694]  INFO -- : 0:  bundler (1.5.1) from /Users/ddr/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
