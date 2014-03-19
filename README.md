@@ -13,6 +13,6 @@ You get your .deb in _pkg directory.
 
 
 ## Links:
-[Percona server](http://www.percona.com/)
-[Sphinxsearch](http://sphinxsearch.com/)
-[FPM](https://github.com/jordansissel/fpm)
+* [Percona server](http://www.percona.com/)
+* [Sphinxsearch](http://sphinxsearch.com/)
+* [FPM](https://github.com/jordansissel/fpm)
