@@ -52,7 +52,19 @@ sudo apt-get -y install build-essential cmake libaio-dev libncurses5-dev
 # configure and build ha_sphinx module
 cp -R ${BUILD_DIR}/sphinx-${SPHINX_VER}-release/mysqlse ${BUILD_DIR}/percona-server-${PERCONA_VER}/storage/sphinx
 cd ${BUILD_DIR}/percona-server-${PERCONA_VER}
-cmake . -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_CONFIG=mysql_release -DFEATURE_SET=community -DWITH_EMBEDDED_SERVER=OFF
+cmake -DCMAKE_INSTALL_PREFIX=/usr \
+      -DMYSQL_UNIX_ADDR=/var/run/mysqld/mysqld.sock \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DWITH_LIBWRAP=ON \
+      -DWITH_SSL=system \
+      -DSYSTEM_TYPE="debian-linux-gnu" \
+      -DINSTALL_LAYOUT=RPM \
+      -DINSTALL_PLUGINDIR=lib/mysql/plugin \
+      -DWITH_EMBEDDED_SERVER=OFF \
+      -DWITH_ARCHIVE_STORAGE_ENGINE=ON \
+      -DWITH_BLACKHOLE_STORAGE_ENGINE=ON \
+      -DWITH_FEDERATED_STORAGE_ENGINE=ON \
+      -DWITH_EXTRA_CHARSETS=all
 cd ${BUILD_DIR}/percona-server-${PERCONA_VER}/storage/sphinx
 make -j${CPU_COUNT}
 
