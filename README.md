@@ -23,6 +23,8 @@ bundle install
 build.sh -s 2.1.9 -p 5.6.19-67.0 -d 5.6.19-67.0-618.trusty -o trusty
 ```
 
+The above paramaters work well for Ubuntu 14.04 LTS 'Trusty' and the most up-to-date Percona Server 5.6 from the Percona APT repository.
+
 You'll find your .deb in the _pkg directory.
 
 ## Links
