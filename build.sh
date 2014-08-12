@@ -55,7 +55,7 @@ cd ${BUILD_DIR}/percona-server-${PERCONA_VER}
 cmake -DCMAKE_INSTALL_PREFIX=/usr \
       -DMYSQL_UNIX_ADDR=/var/run/mysqld/mysqld.sock \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DCMAKE_CXX_FLAGS="-m64 -O3 -felide-constructors -fno-exceptions -fno-rtti"
+      -DCMAKE_CXX_FLAGS="-m64 -O3 -felide-constructors -fno-exceptions -fno-rtti" \
       -DWITH_LIBWRAP=ON \
       -DWITH_SSL=system \
       -DSYSTEM_TYPE="debian-linux-gnu" \
