@@ -47,7 +47,7 @@ tar xzf sphinx-${SPHINX_VER}-release.tar.gz
 
 # install build depends for percona
 sudo apt-get update
-sudo apt-get -y install build-essential cmake libaio-dev libncurses5-dev
+sudo apt-get -y install build-essential cmake libaio-dev libncurses5-dev libwrap0-dev
 
 # configure and build ha_sphinx module
 cp -R ${BUILD_DIR}/sphinx-${SPHINX_VER}-release/mysqlse ${BUILD_DIR}/percona-server-${PERCONA_VER}/storage/sphinx
@@ -55,6 +55,7 @@ cd ${BUILD_DIR}/percona-server-${PERCONA_VER}
 cmake -DCMAKE_INSTALL_PREFIX=/usr \
       -DMYSQL_UNIX_ADDR=/var/run/mysqld/mysqld.sock \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DCMAKE_CXX_FLAGS="-m64 -O3 -felide-constructors -fno-exceptions -fno-rtti" \
       -DWITH_LIBWRAP=ON \
       -DWITH_SSL=system \
       -DSYSTEM_TYPE="debian-linux-gnu" \
