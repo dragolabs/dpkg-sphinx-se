@@ -38,11 +38,25 @@ mkdir -p ${BUILD_DIR} ${INSTALL_DIR} ${PKG_DIR}
 cd ${BUILD_DIR}
 
 # download percona source
-wget http://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/LATEST/source/tarball/percona-server-${PERCONA_VER}.tar.gz
+if [ ! -e percona-server-${PERCONA_VER}.tar.gz ]
+then
+	wget http://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/LATEST/source/tarball/percona-server-${PERCONA_VER}.tar.gz
+fi
+if [ -d percona-server-${PERCONA_VER} ]
+then
+	rm -rf percona-server-${PERCONA_VER}
+fi
 tar xzf percona-server-${PERCONA_VER}.tar.gz
 
 # download sphinxsearch source
-wget http://sphinxsearch.com/files/sphinx-${SPHINX_VER}-release.tar.gz
+if [ ! -e sphinx-${SPHINX_VER}-release.tar.gz ]
+then
+	wget http://sphinxsearch.com/files/sphinx-${SPHINX_VER}-release.tar.gz
+fi
+if [ -d sphinx-${SPHINX_VER}-release ]
+then
+	rm -rf sphinx-${SPHINX_VER}-release
+fi
 tar xzf sphinx-${SPHINX_VER}-release.tar.gz
 
 # install build depends for percona
