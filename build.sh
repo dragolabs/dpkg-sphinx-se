@@ -61,7 +61,8 @@ tar xzf sphinx-${SPHINX_VER}-release.tar.gz
 
 # install build depends for percona
 sudo apt-get update
-sudo apt-get -y install build-essential cmake libaio-dev libncurses5-dev libwrap0-dev
+sudo apt-get -y install build-essential cmake libaio-dev libncurses5-dev libwrap0-dev libreadline-dev ruby-dev
+sudo gem install fpm
 
 # configure and build ha_sphinx module
 cp -R ${BUILD_DIR}/sphinx-${SPHINX_VER}-release/mysqlse ${BUILD_DIR}/percona-server-${PERCONA_VER}/storage/sphinx
