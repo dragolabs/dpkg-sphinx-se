@@ -10,7 +10,7 @@ Script that compiles and builds a debian package for percona-server sphinx-se pl
 
 ## Options build.sh
 
-Automatic detection of your percona / sphinx / ubuntu versions:
+Automatic detection of your percona / sphinx / debian|ubuntu|mint|etc versions:
 
 * `-a` - true or false
 
