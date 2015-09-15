@@ -84,7 +84,9 @@ cd ${BUILD_DIR}
 
 # download percona source
 if [ ! -e percona-server-${PERCONA_VER}.tar.gz ] ; then
-  wget http://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/LATEST/source/tarball/percona-server-${PERCONA_VER}.tar.gz
+  #wget http://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/LATEST/source/tarball/percona-server-${PERCONA_VER}.tar.gz
+  echo McFuzz debug: https://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/Percona-Server-${PERCONA_VER}/source/tarball/percona-server-${PERCONA_VER}.tar.gz
+  wget https://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/Percona-Server-${PERCONA_VER}/source/tarball/percona-server-${PERCONA_VER}.tar.gz
 fi
 if [ -d percona-server-${PERCONA_VER} ] ; then
   rm -rf percona-server-${PERCONA_VER}
