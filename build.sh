@@ -60,7 +60,7 @@ if [ "${AUTO_OPTS}" == true ] ; then
     exit 3
   fi
   PERCONA_DEB_VER=$(echo "$PERCONA_VER" | grep -Po '\d+\.\d+\.\d+[^\s]+')
-  PERCONA_VER=$(echo "$PERCONA_DEB_VER" | grep -oPi '^.+[^.a-z]')
+  PERCONA_VER=$(echo "$PERCONA_DEB_VER" | grep -oPi '^.+[^.a-z]' | sed -e 's/-[0-9]*$//')
   ORG_PREFIX=$(echo "$PERCONA_DEB_VER" | cut -d \~ -f 2)
 fi
 
