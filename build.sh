@@ -59,12 +59,17 @@ if [ "${AUTO_OPTS}" == true ] ; then
     echo "Error: Unable to auto-detect percona version."
     exit 3
   fi
-  PERCONA_DEB_VER=$(echo "$PERCONA_VER" | grep -Po '\d+\.\d+\.\d+[^\s]+')
-  PERCONA_VER=$(echo "$PERCONA_DEB_VER" | grep -oPi '^.+[^.a-z]' | sed -e 's/-[0-9]*$//')
-  ORG_PREFIX=$(echo "$PERCONA_DEB_VER" | cut -d \~ -f 2)
+  # 5.5_5.5.35-rel33.0-611.quantal
+  # 5.5.36-rel34.1-642.wheezy
+  # 5.6_5.6.32-78.0.debian
+  # 5.6.19-67.0-618.trusty
+  # 5.6.32-78.0-1.xenial
+  PERCONA_DEB_VER=$(echo "$PERCONA_VER" | grep -Po '\d+\.(\d+_)?\d+\.\d+[^\s]+')
+  PERCONA_VER=$(echo "$PERCONA_DEB_VER" | grep -oPi '^.+-' | sed -e 's/-$//' | sed -e 's/rel//')
+  ORG_PREFIX=$(echo "$PERCONA_DEB_VER" | grep -Poi "[a-z]+[0-9.]*" | grep -oi "[a-z]*")
 fi
 
-# check is options empty
+# Check if options are empty
 if [ -z "${SPHINX_VER}" ] || [ -z "${PERCONA_VER}" ] || [ -z "${PERCONA_DEB_VER}" ] ; then
   usage
 fi
@@ -84,8 +89,6 @@ cd ${BUILD_DIR}
 
 # download percona source
 if [ ! -e percona-server-${PERCONA_VER}.tar.gz ] ; then
-  #wget http://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/LATEST/source/tarball/percona-server-${PERCONA_VER}.tar.gz
-  echo McFuzz debug: https://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/Percona-Server-${PERCONA_VER}/source/tarball/percona-server-${PERCONA_VER}.tar.gz
   wget https://www.percona.com/downloads/Percona-Server-${PERCONA_SHORT_VER}/Percona-Server-${PERCONA_VER}/source/tarball/percona-server-${PERCONA_VER}.tar.gz
 fi
 if [ -d percona-server-${PERCONA_VER} ] ; then
