@@ -64,9 +64,10 @@ if [ "${AUTO_OPTS}" == true ] ; then
   # 5.6_5.6.32-78.0.debian
   # 5.6.19-67.0-618.trusty
   # 5.6.32-78.0-1.xenial
+  # 5.6.22-rel71.0-0ubuntu4.1
   PERCONA_DEB_VER=$(echo "$PERCONA_VER" | grep -Po '\d+\.(\d+_)?\d+\.\d+[^\s]+')
   PERCONA_VER=$(echo "$PERCONA_DEB_VER" | grep -oPi '^.+-' | sed -e 's/-$//' | sed -e 's/rel//')
-  ORG_PREFIX=$(echo "$PERCONA_DEB_VER" | grep -Poi "[a-z]+[0-9.]*" | grep -oi "[a-z]*")
+  ORG_PREFIX=$(echo "$PERCONA_DEB_VER" | sed -e 's/rel//' | grep -Poi "[a-z]+[0-9.]*" | grep -oi "[a-z]*")
 fi
 
 # Check if options are empty
