@@ -138,6 +138,8 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr \
       -DWITH_FEDERATED_STORAGE_ENGINE=ON \
       -DWITH_EXTRA_CHARSETS=all
 cd ${BUILD_DIR}/percona-server-${PERCONA_VER}/storage/sphinx
+# Change default max return size to 256MB over standard 16MB
+sed -i 's#16\*1024\*1024#256\*1024\*1024#i' ${BUILD_DIR}/percona-server-${PERCONA_VER}/storage/sphinx/ha_sphinx.cc
 make -j${CPU_COUNT}
 
 # copy compiled module to install dir
