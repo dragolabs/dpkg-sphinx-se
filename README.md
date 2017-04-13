@@ -9,6 +9,13 @@ Script that compiles and builds a debian package for percona-server sphinx-se pl
 * `build.sh` - main script: downloads sources, compiles with sphinx, and packs to .deb.
 
 ## Options build.sh
+
+Automatic detection of your percona / sphinx / debian|ubuntu|mint|etc versions:
+
+* `-a` - true or false
+
+Entering your versions manually:
+
 * `-s` - version of sphinxsearch
 * `-p` - version of percona server
 * `-d` - version of percona server in Debian repo
